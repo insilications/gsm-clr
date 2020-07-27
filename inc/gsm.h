@@ -58,6 +58,10 @@ typedef gsm_byte 		gsm_frame[33];		/* 33 * 8 bits	 */
 #define	GSM_OPT_FRAME_INDEX	5
 #define	GSM_OPT_FRAME_CHAIN	6
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 extern gsm  gsm_create 	GSM_P((void));
 extern void gsm_destroy GSM_P((gsm));	
 
@@ -69,6 +73,10 @@ extern int  gsm_decode  GSM_P((gsm, gsm_byte   *, gsm_signal *));
 
 extern int  gsm_explode GSM_P((gsm, gsm_byte   *, gsm_signal *));
 extern void gsm_implode GSM_P((gsm, gsm_signal *, gsm_byte   *));
+
+#ifdef __cplusplus
+}
+#endif
 
 #undef	GSM_P
 

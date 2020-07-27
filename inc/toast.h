@@ -19,12 +19,13 @@
 #include <sys/stat.h>
 
 #include <stdio.h>
+#include <pthread.h>
 #include <ctype.h>
 #include <signal.h>
 
 #include <errno.h>
-#ifndef	HAS_ERRNO_DECL
-	 extern int	errno;
+#ifndef errno
+ extern int	errno;
 #endif
 
 #ifdef	HAS_LIMITS_H
@@ -39,6 +40,10 @@
 # ifdef	HAS_UTIME_H
 #  include <utime.h>
 # endif
+#endif
+
+#ifdef  HAS_STDIO_H
+# include <stdio.h>
 #endif
 
 #include "gsm.h"
